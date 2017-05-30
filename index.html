@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <form id="form" colspan=>
+
+      <label>Prenom: </label>
+      <input type="text" id='firstName'>
+      <span class="tooltip">Veuillez selectionner un Nom d'au moins 2 caracteres, sans chiffre </span>
+
+      <br><br>
+
+      <label>Nom:</label>
+      <input type="text" id='lastName'>
+      <span class="tooltip">Veuillez selectionner un Prenom d'au moins 2 caracteres, sans chiffre</span>
+
+      <br><br>
+
+      <label>Age: </label>
+      <input type="text" id="age">
+      <span class="tooltip">Selectionnez un age entre 4 et 140 ans</span>
+
+      <br><br>
+
+      <label>Pseudo: </label>
+      <input type="text" id="pseudo">
+      <span class="tooltip">Selectionnez un Pseudo d'au moins 3 caracteres</span>
+
+      <br><br>
+
+      <label>Mot de passe: </label>
+      <input type="password" id="mdp">
+      <span class="tooltip">Minimum 6 caracteres</span>
+
+      <br><br>
+
+      <label>Confirmation mot de passe: </label>
+      <input type="password" id='mdpConfirm'>
+      <span class="tooltip">Doit etre identique au mdp</span>
+
+      <br><br>
+
+      <label>Pays:</label>
+	  <br>
+      <select id="countries">
+		<option value="none">Selectionner votre pays :</option>
+        <option value="Fr">France</option>
+        <option value="En">Angleterre</option>
+      </select>
+
+      <span class="tooltip">Selectionner 1 pays</span>
+
+      <br><br>
+
+	  <label for="sexeM">Homme</label>
+      <input type="radio" name="sexe" id="sexeM">
+
+      <br>
+
+      <label for="sexeF">Femme</label>
+      <input type="radio" name="sexe" id="sexeF">
+      <span class="tooltip">Veuillez selectionner une case</span>
+
+      <br><br>
+
+      <input type="button" id="submit" value="Submit">
+      <input type="reset" value="Réinitialiser le formulaire" />
+    </form>
+
+    <script type="text/javascript" src="script.js">
+    </script>
+  </body>
+</html>
