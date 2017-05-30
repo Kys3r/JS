@@ -1,18 +1,18 @@
 //Start on submit click
 
-document.getElementById('submit').addEventListener('click', function(event){
+document.getElementById('submit').addEventListener('click', event => {
 
 //initial function for enable or disable instruction type if user fails
-  function enableTool(elem){
+  const enableTool = elem =>{
 	  return elem.nextElementSibling.style.display = 'inline';
   };
 
-  function disableTool(elem){
+  const disableTool = elem => {
 	  return elem.nextElementSibling.style.display = 'none';
   };
 
 //initial function for check if have number in string
-  function checkInt(value){
+  const checkInt = value =>{
 	 for (var i = 0, len = value.length; i < len; i++) {
   	  	if(value[i] >= 0){
   			return true;
@@ -21,38 +21,38 @@ document.getElementById('submit').addEventListener('click', function(event){
    };
 
 //initial function for check if have string in number
-  function checkStr(value){
-    for (var i = 0, len = value.length; i < len; i++) {
-      let checkParse = parseInt(value[i]);
-      if(isNaN(checkParse)){
-        return true;
-      }
-    };
+  const checkStr = value =>{
+  	 for (var i = 0, len = value.length; i < len; i++) {
+		let checkParse = parseInt(value[i]);
+	    if(isNaN(checkParse)){
+		  return true;
+	    }
+	 };
   };
 
 // Object stock all function      STARTT
   const fct = {
   // Check Gender Radio
-    checkRadio: function(){
-      let userRadio = [document.getElementById('sexeM'),document.getElementById('sexeF')];
-      userRadio[0].checked || userRadio[1].checked ? disableTool(userRadio[1]) : enableTool(userRadio[1]);
-    },
+	checkRadio: ()=> {
+	  let userRadio = [document.getElementById('sexeM'),document.getElementById('sexeF')];
+	  userRadio[0].checked || userRadio[1].checked ? disableTool(userRadio[1]) : enableTool(userRadio[1]);
+	},
 
-  // Check String input
-    checkString: function(id, number, bool){ //bool is true if is possible to insert number in input
-      let idAfter = document.getElementById(id);
-      let string = idAfter.value;
-      let tempBool;
-      bool === false ? (
-        tempBool = checkInt(string),
-	  (idAfter.value.length < number || tempBool === true ? enableTool(idAfter) : disableTool(idAfter))
-        ) : (
-	  (idAfter.value.length < number ? enableTool(idAfter) : disableTool(idAfter))
-	);
-      },
+	//Check String input
+	  checkString: (id, number, bool) =>{ //bool is true if is possible to insert number in input
+	    let idAfter = document.getElementById(id);
+		let string = idAfter.value;
+        let tempBool;
+	    bool === false ? (
+		  tempBool = checkInt(string),
+	      (idAfter.value.length < number || tempBool === true ? enableTool(idAfter) : disableTool(idAfter))
+	    ) : (
+	      (idAfter.value.length < number ? enableTool(idAfter) : disableTool(idAfter))
+	    );
+  	 },
 
   //Check Age
-    checkAge: function(){
+    checkAge: () => {
       let userAge = document.getElementById('age');
       let userPut = userAge.value;
 	  let tempBool = checkStr(userPut);
@@ -61,18 +61,18 @@ document.getElementById('submit').addEventListener('click', function(event){
     },
 
   //Verify password
-    checkPass: function(){
+    checkPass: () => {
       let userPwd = document.getElementById('mdp');
       let userPwdVerif = document.getElementById('mdpConfirm');
       userPwd.value == userPwdVerif.value ? disableTool(userPwdVerif) : enableTool(userPwdVerif);
     },
 
   //Check Countrie
-    checkCountrie: function(){
-      let userCountries = document.getElementById('countries');
-      let userCountSelect = userCountries.options[userCountries.selectedIndex].value;
-      (userCountSelect == 'Fr' || userCountSelect == 'En') ? disableTool(userCountries) : enableTool(userCountries);
-    }
+	checkCountrie: () => {
+	  let userCountries = document.getElementById('countries');
+	  let userCountSelect = userCountries.options[userCountries.selectedIndex].value;
+	  (userCountSelect == 'Fr' || userCountSelect == 'En') ? disableTool(userCountries) : enableTool(userCountries);
+  	}
 
   // End of function object
   };
