@@ -22,34 +22,34 @@ document.getElementById('submit').addEventListener('click', function(event){
 
 //initial function for check if have string in number
   function checkStr(value){
-  	 for (var i = 0, len = value.length; i < len; i++) {
-		let checkParse = parseInt(value[i]);
-	    if(isNaN(checkParse)){
-		  return true;
-	    }
-	 };
+    for (var i = 0, len = value.length; i < len; i++) {
+      let checkParse = parseInt(value[i]);
+      if(isNaN(checkParse)){
+        return true;
+      }
+    };
   };
 
 // Object stock all function      STARTT
   const fct = {
   // Check Gender Radio
-	checkRadio: function(){
-	  let userRadio = [document.getElementById('sexeM'),document.getElementById('sexeF')];
-	  userRadio[0].checked || userRadio[1].checked ? disableTool(userRadio[1]) : enableTool(userRadio[1]);
-	},
+    checkRadio: function(){
+      let userRadio = [document.getElementById('sexeM'),document.getElementById('sexeF')];
+      userRadio[0].checked || userRadio[1].checked ? disableTool(userRadio[1]) : enableTool(userRadio[1]);
+    },
 
-	//Check String input
-	  checkString: function(id, number, bool){ //bool is true if is possible to insert number in input
-	    let idAfter = document.getElementById(id);
-		let string = idAfter.value;
-        let tempBool;
-	    bool === false ? (
-		  tempBool = checkInt(string),
-	      (idAfter.value.length < number || tempBool === true ? enableTool(idAfter) : disableTool(idAfter))
-	    ) : (
-	      (idAfter.value.length < number ? enableTool(idAfter) : disableTool(idAfter))
-	    );
-  	 },
+  // Check String input
+    checkString: function(id, number, bool){ //bool is true if is possible to insert number in input
+      let idAfter = document.getElementById(id);
+      let string = idAfter.value;
+      let tempBool;
+      bool === false ? (
+        tempBool = checkInt(string),
+	  (idAfter.value.length < number || tempBool === true ? enableTool(idAfter) : disableTool(idAfter))
+        ) : (
+	  (idAfter.value.length < number ? enableTool(idAfter) : disableTool(idAfter))
+	);
+      },
 
   //Check Age
     checkAge: function(){
@@ -68,11 +68,11 @@ document.getElementById('submit').addEventListener('click', function(event){
     },
 
   //Check Countrie
-	checkCountrie: function(){
-	  let userCountries = document.getElementById('countries');
-	  let userCountSelect = userCountries.options[userCountries.selectedIndex].value;
-	  (userCountSelect == 'Fr' || userCountSelect == 'En') ? disableTool(userCountries) : enableTool(userCountries);
-  	}
+    checkCountrie: function(){
+      let userCountries = document.getElementById('countries');
+      let userCountSelect = userCountries.options[userCountries.selectedIndex].value;
+      (userCountSelect == 'Fr' || userCountSelect == 'En') ? disableTool(userCountries) : enableTool(userCountries);
+    }
 
   // End of function object
   };
