@@ -1,0 +1,24 @@
+
+body {
+    margin: auto;
+    padding-top: 80px;
+    width: 300px;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    background-color: #F5F5F5;
+}
+
+#roll > div:hover {
+    background-color: #F7F8FA;
+    color: black;
+}
+
+#roll > div, input{
+    background-color: white;
+    width: 100%;
+}
+
+.results:focus {
+    background-color: #F7F8FA;
+    color: black;
+}
